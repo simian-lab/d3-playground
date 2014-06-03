@@ -145,7 +145,7 @@ body, html {
   @media screen and (max-width: 64rem) {
     .chart {
       height: 70%;
-      width: 90%; }
+      width: 80%; }
       @media (orientation: landscape) {
         .chart {
           width: 50%;
@@ -154,6 +154,43 @@ body, html {
     @media (orientation: landscape) {
       .chart {
         height: 60%; } } }
+
+.dose-info {
+  color: #344;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.45rem;
+  opacity: 1;
+  text-align: left;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out; }
+  .dose-info.invisible {
+    opacity: 0; }
+  .dose-info em {
+    color: green; }
+
+.chart-legend {
+  padding: 0;
+  text-align: center; }
+  .chart-legend li {
+    color: #444;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    list-style: none; }
+    .chart-legend li:before {
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      margin: 0 0.5rem;
+      height: 1rem;
+      width: 1rem; }
+    .chart-legend li.third:before {
+      background-color: #e5f5f9; }
+    .chart-legend li.second:before {
+      background-color: #99d8c9; }
+    .chart-legend li.first:before {
+      background-color: #2ca25f; }
 
 .visible {
   opacity: 1;

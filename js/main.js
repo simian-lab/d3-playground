@@ -3,6 +3,7 @@ var statsScreen = document.querySelector('.stats-screen');
 
 var knowMoreButton = document.querySelector('.know-more');
 var chartContainer = document.querySelector('.chart');
+var doseInfo = document.querySelector('.dose-info');
 
 var firstCicleButton = document.querySelector('.first-cicle');
 var secondCicleButton = document.querySelector('.second-cicle');
@@ -47,7 +48,7 @@ function paintChart() {
       radius = Math.min(width, height) / 2;
 
   var color = d3.scale.ordinal()
-    .range(colorbrewer.RdBu[9]);
+    .range(colorbrewer.BuGn[3]);
 
   pie = d3.layout.pie()
       .value(function(d) { return d.apples; })
@@ -79,10 +80,25 @@ function paintChart() {
   // Add button events
   firstCicleButton.addEventListener('click', function(e) {
     e.preventDefault();
+    doseInfo.className = 'dose-info invisible';
+
+    setTimeout(function(){
+      doseInfo.innerHTML = 'Despues de la primera dosis, se incrementa la movilidad de los pacientes en un <em>34.6%</em>.';
+      doseInfo.className = 'dose-info';
+    }, 500);
+
     change('oranges');
   });
   secondCicleButton.addEventListener('click', function(e) {
     e.preventDefault();
+
+    doseInfo.className = 'dose-info invisible';
+
+    setTimeout(function(){
+      doseInfo.innerHTML = 'Tras la segunda dosis hay una regresión completa de los síntomas en el <em>92.3%</em> de pacientes con condrosteositis nodular.';
+      doseInfo.className = 'dose-info';
+    }, 500);
+
     change('pears');
   });
 
